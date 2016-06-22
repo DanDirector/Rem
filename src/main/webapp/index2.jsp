@@ -9,17 +9,23 @@
     <style>
         .btn {
             color: #fff;
-            background-color: #fb9939;
+            background-color: #c683cc;
             width: 100%;
             padding: 10px;
             border: 1px;
             font-size: 32px;
+            margin: 3px;
         }
     </style>
 </head>
 <body>
-<form action="MyServlet" method="get">
-    <button class="btn" name="jsp" value="index">This is index ${number1}</button>
-</form>
+<c:forEach var="i" begin="1" end="5">
+    <form action="MyServlet" method="get">
+        <button class="btn" name="jsp" value="index2">This is index ${number2}</button>
+    </form>
+</c:forEach>
+${number2}
+<% String s = (String) request.getSession().getAttribute("number2");%>
+<%=s%>
 </body>
 </html>
