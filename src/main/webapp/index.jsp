@@ -21,5 +21,8 @@
 <form action="MyServlet" method="get">
     <button class="btn" name="jsp" value="index">This is index ${number1}</button>
 </form>
+<c:forEach items="${bubl}" var="b" >
+    ${b}
+</c:forEach>
 </body>
 </html>

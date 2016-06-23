@@ -26,6 +26,8 @@
 </c:forEach>
 ${number2}
 <% String s = (String) request.getSession().getAttribute("number2");%>
+<% String s2 = (String) request.getAttribute("a");%>
 <%=s%>
+<%=s2%>
 </body>
 </html>

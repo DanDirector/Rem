@@ -19,14 +19,19 @@ public class MyServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+        request.getSession().setAttribute("bubl", dao.d.DaoImpl.showAllThings());
+
         if (request.getParameter("jsp").equals("index")) {
             request.getSession().setAttribute("number1", "1");
-            response.sendRedirect("index2.jsp");
-//        request.getRequestDispatcher("index2.jsp").forward(request,response);
+            request.setAttribute("a","index2");
+//            response.sendRedirect("index2.jsp");
+        request.getRequestDispatcher("index2.jsp").forward(request,response);
         } else if (request.getParameter("jsp").equals("index2")) {
             request.getSession().setAttribute("number2", "2");
-            response.sendRedirect("index.jsp");
-//            request.getRequestDispatcher("index.jsp").forward(request,response);
+            request.setAttribute("a","index");
+
+//            response.sendRedirect("index.jsp");
+            request.getRequestDispatcher("index.jsp").forward(request,response);
         }
     }
 }
